@@ -21,6 +21,25 @@
       <AwaitingOrderCard />
       <AwaitingOrderCard />
       <AwaitingOrderCard />
+      <AwaitingOrderCard />
+      <AwaitingOrderCard />
+      <AwaitingOrderCard />
+      <AwaitingOrderCard />
+      <AwaitingOrderCard />
+      <AwaitingOrderCard />
+      <AwaitingOrderCard />
+      <AwaitingOrderCard />
+      <AwaitingOrderCard />
+      <AwaitingOrderCard />
+      <AwaitingOrderCard />
+      <AwaitingOrderCard />
+      <AwaitingOrderCard />
+      <AwaitingOrderCard />
+      <AwaitingOrderCard />
+      <AwaitingOrderCard />
+      <AwaitingOrderCard />
+      <AwaitingOrderCard />
+      <AwaitingOrderCard />
     </div>
   </div>
 </div>

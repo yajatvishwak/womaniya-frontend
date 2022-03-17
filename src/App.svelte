@@ -3,7 +3,9 @@
   import Router from "svelte-spa-router";
 </script>
 
-<Router {routes} />
+<div class="relative">
+  <Router {routes} />
+</div>
 
 <style lang="postcss" global>
   @tailwind base;
