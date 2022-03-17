@@ -17,7 +17,7 @@
     <div>
       <div class="flex justify-between">
         <div class="font-bold opacity-50">#order123</div>
-        <div>#</div>
+        <label for="my-modal">❌</label>
       </div>
       <div class="text-2xl font-bold">Hot moms</div>
       <div class="text-primary-blue font-bold">500 rs/plate</div>
@@ -42,7 +42,6 @@
     <div class="flex items-center justify-center flex-wrap mt-10 gap-3">
       <Button text="Completed ✅" />
       <Button text="Cancelled ❌" />
-      <label for="my-modal" class="mt-4 ml-auto ">Close ❌</label>
     </div>
   </div>
 </div>
