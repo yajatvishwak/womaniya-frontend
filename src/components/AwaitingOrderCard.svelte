@@ -39,7 +39,7 @@
       </div>
     </div>
 
-    <div class="flex items-center justify-center flex-wrap mt-10 ">
+    <div class="flex items-center justify-center flex-wrap mt-10 gap-3">
       <Button text="Completed ✅" />
       <Button text="Cancelled ❌" />
       <label for="my-modal" class="mt-4 ml-auto ">Close ❌</label>
@@ -47,8 +47,8 @@
   </div>
 </div>
 
-<div class="p-2">
-  <label for="my-modal" class="px-5  w-full">
+<div class="">
+  <label for="my-modal" class="  w-full">
     <div
       class="rounded-4xl flex items-center gap-5 w-full bg-white shadow-sm p-4"
     >
