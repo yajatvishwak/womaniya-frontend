@@ -1,6 +1,8 @@
 <script>
+  import { push } from "svelte-spa-router";
+
   import { fade } from "svelte/transition";
-  let isopen = true;
+  let isopen = false;
 </script>
 
 {#if isopen}
@@ -13,21 +15,37 @@
       <div class="text-3xl mt-10 font-semibold mb-4">Navigate To</div>
       <div class="flex justify-center items-center flex-col gap-3">
         <div
+          on:click={() => {
+            push("/home");
+            isopen = false;
+          }}
           class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center  text-xl text-fuchsia-500"
         >
           Home
         </div>
         <div
+          on:click={() => {
+            push("/profile");
+            isopen = false;
+          }}
           class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center  text-xl text-fuchsia-500"
         >
           Profile
         </div>
         <div
+          on:click={() => {
+            push("/awaiting-orders");
+            isopen = false;
+          }}
           class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center  text-xl text-fuchsia-500"
         >
           Your Offering Orders
         </div>
         <div
+          on:click={() => {
+            push("/previous-orders");
+            isopen = false;
+          }}
           class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center  text-xl text-fuchsia-500"
         >
           Your Orders
