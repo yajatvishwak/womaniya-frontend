@@ -28,7 +28,9 @@
         name=""
         id=""
       />
-      <div class={`absolute top-4 left-[45%]   font-bold text-white text-xl`}>
+      <div
+        class={`absolute top-4 left-1/2 transform -translate-x-1/2 font-bold text-white text-xl`}
+      >
         {price}
       </div>
     </div>

@@ -17,6 +17,7 @@
       },
     ],
   };
+  console.log(data.recentOfferings[0].oid);
 </script>
 
 <div class="overflow-auto p-8">
@@ -36,7 +37,7 @@
         title={offering.title}
         sellerName={offering.sellerName}
         price={offering.price}
-        oid={offering.oID}
+        oID={offering.oid}
       />
     {/each}
   </div>

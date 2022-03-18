@@ -20,16 +20,26 @@
           }}
           class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center  text-xl text-fuchsia-500"
         >
-          Home
+          Home 🏡
         </div>
         <div
           on:click={() => {
-            push("/profile/" + localStorage.getItem("pid"));
+            push("/add-offering");
             isopen = false;
           }}
           class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center  text-xl text-fuchsia-500"
         >
-          Profile
+          Add your Offering 📝
+        </div>
+
+        <div
+          on:click={() => {
+            push("/awaiting-orders");
+            isopen = false;
+          }}
+          class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center  text-xl text-fuchsia-500"
+        >
+          Seller Dashboard 💰
         </div>
         <div
           on:click={() => {
@@ -38,7 +48,7 @@
           }}
           class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center  text-xl text-fuchsia-500"
         >
-          Your Offering Orders
+          Your Offerings 🪐
         </div>
         <div
           on:click={() => {
@@ -47,7 +57,16 @@
           }}
           class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center  text-xl text-fuchsia-500"
         >
-          Your Orders
+          Your Orders 📦
+        </div>
+        <div
+          on:click={() => {
+            push("/profile/" + localStorage.getItem("pid"));
+            isopen = false;
+          }}
+          class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center  text-xl text-fuchsia-500"
+        >
+          Profile 😁
         </div>
       </div>
     </div>

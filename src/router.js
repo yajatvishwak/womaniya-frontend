@@ -5,6 +5,7 @@ import AddOffering from "./pages/AddOffering.svelte";
 import Profile from "./pages/Profile.svelte";
 import PreviousOrders from "./pages/PreviousOrders.svelte";
 import AwaitingOrders from "./pages/AwaitingOrders.svelte";
+import Listings from "./pages/Listings.svelte";
 
 const routes = {
   // Exact path
@@ -15,5 +16,6 @@ const routes = {
   "/profile/:id": Profile,
   "/previous-orders": PreviousOrders,
   "/awaiting-orders": AwaitingOrders,
+  "/listings": Listings,
 };
 export default routes;

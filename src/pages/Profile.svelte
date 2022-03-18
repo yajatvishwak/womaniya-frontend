@@ -105,13 +105,15 @@
       <div class="flex flex-col">
         <Button text="Edit Personal Information" cb={() => (isOpen = true)} />
         <Button
-          text="View your previous Orders"
+          text="View orders placed by you"
           cb={() => push("/previous-orders")}
         />
+        <Button text="View your Offerings" cb={() => push("/listings")} />
         <Button
-          text="View incoming orders"
+          text="View orders for your Offerings"
           cb={() => push("/awaiting-orders")}
         />
+
         <Button red={true} text="Logout" />
       </div>
     {/if}
