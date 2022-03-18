@@ -5,6 +5,7 @@
   import Upload from "../components/Upload.svelte";
   import TextInput from "../components/TextInput.svelte";
   import TextArea from "../components/TextArea.svelte";
+  import { push } from "svelte-spa-router";
   let isAdmin = true;
   let isOpen = false;
   export let params = {};
@@ -18,6 +19,7 @@
       atque, cupiditate hic vitae consectetur, labore laudantium minus
       blanditiis aspernatur recusandae ipsum! Blanditiis et laborum laudantium
       labore aperiam provident doloribus eveniet?`,
+    isAdmin: true,
   };
 </script>
 
@@ -47,11 +49,10 @@
       <label for=""> Upload Display Picture </label>
       <Upload />
     </form>
-    <div class="modal-action">
-      <label
-        for="edit-profile-modal"
-        on:click={() => (isOpen = false)}
-        class="btn">Yay!</label
+    <div class="modal-action flex justify-between">
+      <div>💾 Save</div>
+      <label for="edit-profile-modal" on:click={() => (isOpen = false)} class=""
+        >Close</label
       >
     </div>
   </div>
@@ -103,8 +104,14 @@
       <div class="mt-4 mb-2 font-bold text-xl">Actions</div>
       <div class="flex flex-col">
         <Button text="Edit Personal Information" cb={() => (isOpen = true)} />
-        <Button text="View your previous Orders" />
-        <Button text="View incoming orders" />
+        <Button
+          text="View your previous Orders"
+          cb={() => push("/previous-orders")}
+        />
+        <Button
+          text="View incoming orders"
+          cb={() => push("/awaiting-orders")}
+        />
         <Button red={true} text="Logout" />
       </div>
     {/if}
