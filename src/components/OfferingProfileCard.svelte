@@ -1,10 +1,12 @@
 <script>
-  export let imgURL = "";
+import { push } from "svelte-spa-router";
+
+
   export let avatarURL = "";
-  export let title = "";
-  export let soldby = "";
-  export let price = "";
-  export let oID = "";
+  export let sellerName = "";
+  export let sellerDesc = "";
+  export let sellerLocation = "";
+  export let sellerID = "";
 </script>
 
 <div class=" p-2">
@@ -14,17 +16,18 @@
     >
       <div class="h-24 w-20">
         <img
+          alt="seller"
           class="rounded-3xl w-full h-full object-cover"
-          src="https://www.datocms-assets.com/55010/1631448989-1609827493259134-modelo.jpg?auto=format%2Ccompress&cs=srgb"
+          src={avatarURL}
         />
       </div>
       <div class="flex-1">
-        <div class="text-xl font-bold">Your momo</div>
+        <div class="text-xl font-bold">{sellerName}</div>
         <div class="font-bold opacity-50 text-sm">
-          Lorem, ipsum dolor sit amet cons
+          {sellerDesc}
         </div>
         <div class="font-bold text-primary-blue flex gap-1 mt-2">
-          <div>
+          <div >
             <svg
               class="w-6 h-6"
               fill="none"
@@ -44,10 +47,10 @@
               /></svg
             >
           </div>
-          <div>Bangalore</div>
+          <div>{sellerLocation}</div>
         </div>
       </div>
-      <div class="ml-auto">
+      <div on:click={() => push("/profile/"+sellerID)} class="ml-auto">
         <svg
           class="w-6 h-6"
           fill="none"

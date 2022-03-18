@@ -1,6 +1,5 @@
 <script>
   import { push } from "svelte-spa-router";
-
   import { fade } from "svelte/transition";
   let isopen = false;
 </script>
@@ -25,7 +24,7 @@
         </div>
         <div
           on:click={() => {
-            push("/profile");
+            push("/profile/" + localStorage.getItem("pid"));
             isopen = false;
           }}
           class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center  text-xl text-fuchsia-500"

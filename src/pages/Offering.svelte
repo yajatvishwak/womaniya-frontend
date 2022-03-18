@@ -1,16 +1,25 @@
 <script>
-  import TextInput from "../components/TextInput.svelte";
-  import Button from "../components/Button.svelte";
-  import OfferingCard from "../components/OfferingCard.svelte";
-  import CategoryCard from "../components/CategoryCard.svelte";
   import OfferingProfileCard from "../components/OfferingProfileCard.svelte";
   import Slider from "../components/Slider.svelte";
-  import TextArea from "../components/TextArea.svelte";
-  import Upload from "../components/Upload.svelte";
-  import Video from "../components/Video.svelte";
-  import PreviousOrderCard from "../components/PreviousOrderCard.svelte";
-  import AwaitingOrderCard from "../components/AwaitingOrderCard.svelte";
   import NavBar from "../components/NavBar.svelte";
+  export let params = {};
+  // console.log(params.id)
+  let data = {
+    title: "Hot momos",
+    desc: ` Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores consequatur
+    nesciunt ut omnis explicabo mollitia animi. Quas, autem deleniti culpa nam
+    nulla quia aperiam. Est, quos quasi. Iusto, nemo? Inventore?`,
+    oid: params.id,
+    price: "1000 / per plate",
+    seller: {
+      sellerID: 12,
+      avatarURL:
+        "https://www.datocms-assets.com/55010/1631448989-1609827493259134-modelo.jpg?auto=format%2Ccompress&cs=srgb",
+      sellerName: "Yojar",
+      sellerLocation: "Banaglore",
+      sellerDesc: "yooyyoyoyo wasssup",
+    },
+  };
 </script>
 
 <div class="overflow-auto p-8">
@@ -22,16 +31,20 @@
       alt=""
     />
   </div>
-  <div class="mt-6 font-bold text-3xl text-primary-blue">HotMomos</div>
+  <div class="mt-6 font-bold text-3xl text-primary-blue">{data.title}</div>
   <div class="mt-2">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores consequatur
-    nesciunt ut omnis explicabo mollitia animi. Quas, autem deleniti culpa nam
-    nulla quia aperiam. Est, quos quasi. Iusto, nemo? Inventore?
+    {data.desc}
   </div>
   <div class="my-6">
-    <OfferingProfileCard />
+    <OfferingProfileCard
+      avatarURL={data.seller.avatarURL}
+      sellerName={data.seller.sellerName}
+      sellerID={data.seller.sellerID}
+      sellerLocation={data.seller.sellerLocation}
+      sellerDesc={data.seller.sellerDesc}
+    />
   </div>
   <div>
-    <Slider />
+    <Slider price={data.price} />
   </div>
 </div>

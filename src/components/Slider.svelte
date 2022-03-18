@@ -1,5 +1,6 @@
 <script>
   import { fade } from "svelte/transition";
+  export let price = "";
   let value = 0;
   let slidedone = false;
   $: {
@@ -28,7 +29,7 @@
         id=""
       />
       <div class={`absolute top-4 left-[45%]   font-bold text-white text-xl`}>
-        500rs/hr
+        {price}
       </div>
     </div>
   {/if}

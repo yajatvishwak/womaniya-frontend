@@ -1,18 +1,61 @@
 <script>
-  import TextInput from "../components/TextInput.svelte";
   import Button from "../components/Button.svelte";
-  import OfferingCard from "../components/OfferingCard.svelte";
-  import CategoryCard from "../components/CategoryCard.svelte";
-  import OfferingProfileCard from "../components/OfferingProfileCard.svelte";
-  import Slider from "../components/Slider.svelte";
-  import TextArea from "../components/TextArea.svelte";
-  import Upload from "../components/Upload.svelte";
   import Video from "../components/Video.svelte";
-  import PreviousOrderCard from "../components/PreviousOrderCard.svelte";
-  import AwaitingOrderCard from "../components/AwaitingOrderCard.svelte";
   import NavBar from "../components/NavBar.svelte";
+  import Upload from "../components/Upload.svelte";
+  import TextInput from "../components/TextInput.svelte";
+  import TextArea from "../components/TextArea.svelte";
   let isAdmin = true;
+  let isOpen = false;
+  export let params = {};
+  let data = {
+    id: params.id,
+    avatarURL:
+      "https://www.datocms-assets.com/55010/1631448989-1609827493259134-modelo.jpg?auto=format%2Ccompress&cs=srgb",
+    username: "Savita Bhabi",
+    location: "Bangalore",
+    story: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis
+      atque, cupiditate hic vitae consectetur, labore laudantium minus
+      blanditiis aspernatur recusandae ipsum! Blanditiis et laborum laudantium
+      labore aperiam provident doloribus eveniet?`,
+  };
 </script>
+
+<input
+  type="checkbox"
+  checked={isOpen}
+  id="edit-profile-modal"
+  class="modal-toggle"
+/>
+<div class="modal ">
+  <div class="modal-box  bg-background">
+    <h3 class="font-bold text-lg">Edit Your Profile Page</h3>
+    <form class="flex flex-col">
+      <div>
+        <label for=""> Username </label>
+        <TextInput />
+      </div>
+      <div>
+        <label for=""> Location </label>
+        <TextInput />
+      </div>
+      <div>
+        <label for=""> My Story </label>
+        <TextArea />
+      </div>
+
+      <label for=""> Upload Display Picture </label>
+      <Upload />
+    </form>
+    <div class="modal-action">
+      <label
+        for="edit-profile-modal"
+        on:click={() => (isOpen = false)}
+        class="btn">Yay!</label
+      >
+    </div>
+  </div>
+</div>
 
 <div class="overflow-auto p-8">
   <NavBar />
@@ -25,7 +68,7 @@
       />
     </div>
     <div>
-      <div class="text-3xl  font-bold text-center mt-5">Savita Bhabhi</div>
+      <div class="text-3xl  font-bold text-center mt-5">{data.username}</div>
       <div class="flex gap-2 justify-center items-center">
         <svg
           class="w-6 h-6"
@@ -45,16 +88,13 @@
             d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
           /></svg
         >
-        <div class="text-xl font-bold  text-primary-blue">Bangalore</div>
+        <div class="text-xl font-bold  text-primary-blue">{data.location}</div>
       </div>
     </div>
 
     <div class="mt-4 mb-2 font-bold text-xl">My Story</div>
     <div>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis
-      atque, cupiditate hic vitae consectetur, labore laudantium minus
-      blanditiis aspernatur recusandae ipsum! Blanditiis et laborum laudantium
-      labore aperiam provident doloribus eveniet?
+      {data.story}
     </div>
     <div>
       <Video />
@@ -62,7 +102,7 @@
     {#if isAdmin}
       <div class="mt-4 mb-2 font-bold text-xl">Actions</div>
       <div class="flex flex-col">
-        <Button text="Edit Personal Information" />
+        <Button text="Edit Personal Information" cb={() => (isOpen = true)} />
         <Button text="View your previous Orders" />
         <Button text="View incoming orders" />
         <Button red={true} text="Logout" />

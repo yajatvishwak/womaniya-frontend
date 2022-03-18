@@ -13,7 +13,7 @@
 
 <input type="checkbox" id="my-modal" class="modal-toggle" />
 <div class="modal">
-  <div class="modal-box">
+  <div class="modal-box bg-white">
     <div>
       <div class="flex justify-between">
         <div class="font-bold opacity-50">#order123</div>

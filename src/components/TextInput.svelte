@@ -9,13 +9,13 @@
     <input
       bind:value={text}
       type="password"
-      class=" input w-full text-xl font-bold  text-primary-blue"
+      class=" input w-full text-xl font-bold bg-white text-primary-blue"
       {placeholder}
     />
   {:else}
     <input
       bind:value={text}
-      class=" input w-full text-xl font-bold   text-primary-blue"
+      class=" input w-full bg-white text-xl font-bold   text-primary-blue"
       type="text"
       {placeholder}
     />
