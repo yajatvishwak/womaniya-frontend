@@ -43,7 +43,7 @@
         </div>
         <div
           on:click={() => {
-            push("/awaiting-orders");
+            push("/listings");
             isopen = false;
           }}
           class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center  text-xl text-fuchsia-500"
