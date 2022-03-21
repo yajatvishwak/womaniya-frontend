@@ -2,6 +2,7 @@
   import OfferingCard from "../components/OfferingCard.svelte";
   import CategoryCard from "../components/CategoryCard.svelte";
   import NavBar from "../components/NavBar.svelte";
+
   let data = {
     username: "bro",
     recentOfferings: [
@@ -50,7 +51,7 @@
         title={offering.title}
         sellerName={offering.sellerName}
         price={offering.price}
-        oID={offering.oid}
+        oid={offering.oid}
       />
     {/each}
   </div>

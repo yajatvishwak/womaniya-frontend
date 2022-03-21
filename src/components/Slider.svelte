@@ -19,15 +19,7 @@
     </div>
   {:else}
     <div class="w-full relative">
-      <input
-        class="slider"
-        min="0"
-        bind:value
-        max="99"
-        type="range"
-        name=""
-        id=""
-      />
+      <input class="slider" min="0" bind:value max="99" type="range" id="" />
       <div
         class={`absolute top-4 left-1/2 transform -translate-x-1/2 font-bold text-white text-xl`}
       >

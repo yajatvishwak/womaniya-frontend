@@ -5,6 +5,20 @@
   export let params = {};
   // console.log(params.id)
   let data = {
+    // sellerID: 12,
+    //   avatarURL:
+    //     "https://www.datocms-assets.com/55010/1631448989-1609827493259134-modelo.jpg?auto=format%2Ccompress&cs=srgb",
+    //   sellerName: "Yojar",
+    //   sellerLocation: "Banaglore",
+    //   sellerDesc: "yooyyoyoyo wasssup",
+    //   listings: [{
+    //     title: "Hot momos",
+    // desc: ` Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores consequatur
+    // nesciunt ut omnis explicabo mollitia animi. Quas, autem deleniti culpa nam
+    // nulla quia aperiam. Est, quos quasi. Iusto, nemo? Inventore?`,
+    // oid: params.id,
+    // price: "1000 / per plate",
+    //   }]
     title: "Hot momos",
     desc: ` Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores consequatur
     nesciunt ut omnis explicabo mollitia animi. Quas, autem deleniti culpa nam

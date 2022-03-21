@@ -24,7 +24,7 @@
         title={offering.title}
         sellerName={offering.sellerName}
         price={offering.price}
-        oID={offering.oid}
+        oid={offering.oid}
       />
     {/each}
   </div>

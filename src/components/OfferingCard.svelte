@@ -5,7 +5,7 @@
   export let title = "";
   export let sellerName = "";
   export let price = "";
-  export let oID = "";
+  export let oid = "";
   export let isAdmin = false;
 </script>
 
@@ -50,7 +50,7 @@
         {/if}
         <div class="font-bold text-primary-blue">{price}</div>
       </div>
-      <div class="ml-auto" on:click={() => push("/offering/" + oID)}>
+      <div class="ml-auto" on:click={() => push("/offering/" + oid)}>
         <svg
           class="w-6 h-6"
           fill="none"
