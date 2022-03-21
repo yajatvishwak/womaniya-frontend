@@ -5,6 +5,19 @@
   let data = {
     username: "bro",
     recentOfferings: [
+      // {
+      //   sellerName:
+      //   avatarURL:
+      //   listings: [
+      //     {
+      //       imgUrl:
+      //       title:
+      //       price:
+      //       oid:
+      //     }
+      //   ]
+      // }
+
       {
         imgURL:
           "https://www.tiffinboxfood.com/wp-content/uploads/2020/03/chicken-momo-1.jpg",
