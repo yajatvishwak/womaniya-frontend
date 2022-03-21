@@ -33,16 +33,21 @@
     <div
       class="rounded-4xl flex items-center gap-5 w-full bg-white shadow-sm p-2"
     >
-      <div class="h-24 w-20">
-        <img
-          alt="seller"
-          class="rounded-3xl w-full h-full object-cover"
-          src={avatarURL}
-        />
-      </div>
-      <div>
+      {#if !isAdmin}
+        <div class="h-24 w-20">
+          <img
+            alt="seller"
+            class="rounded-3xl w-full h-full object-cover"
+            src={avatarURL}
+          />
+        </div>
+      {/if}
+
+      <div class={isAdmin ? "p-3" : ""}>
         <div class="text-xl font-bold">{title}</div>
-        <div class="font-bold opacity-50">{sellerName}</div>
+        {#if !isAdmin}
+          <div class="font-bold opacity-50">{sellerName}</div>
+        {/if}
         <div class="font-bold text-primary-blue">{price}</div>
       </div>
       <div class="ml-auto" on:click={() => push("/offering/" + oID)}>
