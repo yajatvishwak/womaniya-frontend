@@ -14,7 +14,7 @@
 
 <div class="overflow-auto p-8">
   <NavBar />
-  <div class="mt-6 font-bold text-xl">Your Listings</div>
+  <div class="mt-6 font-bold text-xl">Your Offerings</div>
   <div class="my-4">
     {#each data as offering}
       <OfferingCard

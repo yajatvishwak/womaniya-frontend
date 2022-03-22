@@ -13,7 +13,7 @@
     id: params.id,
     avatarURL:
       "https://www.datocms-assets.com/55010/1631448989-1609827493259134-modelo.jpg?auto=format%2Ccompress&cs=srgb",
-    username: "Savita Bhabi",
+    username: "Saloni",
     location: "Bangalore",
     story: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis
       atque, cupiditate hic vitae consectetur, labore laudantium minus
@@ -105,7 +105,14 @@
       <div class="flex flex-col">
         <Button text="Edit Personal Information" cb={() => (isOpen = true)} />
 
-        <Button red={true} text="Logout" />
+        <Button
+          red={true}
+          text="Logout"
+          cb={() => {
+            localStorage.setItem("userID", "");
+            push("/");
+          }}
+        />
       </div>
     {/if}
     <div

@@ -18,44 +18,50 @@
             push("/home");
             isopen = false;
           }}
-          class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center  text-xl text-fuchsia-500"
+          class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center font-bold text-xl text-fuchsia-500"
         >
           Home 🏡
+        </div>
+
+        <div class="py-3  flex justify-start items-start self-start">
+          <div class="text-xl">Seller Zone</div>
         </div>
         <div
           on:click={() => {
             push("/add-offering");
             isopen = false;
           }}
-          class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center  text-xl text-fuchsia-500"
+          class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center font-bold text-xl text-fuchsia-500"
         >
           Add your Offering 📝
         </div>
-
         <div
           on:click={() => {
             push("/awaiting-orders");
             isopen = false;
           }}
-          class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center  text-xl text-fuchsia-500"
+          class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center font-bold  text-xl text-fuchsia-500"
         >
-          Seller Dashboard 💰
+          Awaiting Orders💰
         </div>
         <div
           on:click={() => {
             push("/listings");
             isopen = false;
           }}
-          class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center  text-xl text-fuchsia-500"
+          class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center font-bold  text-xl text-fuchsia-500"
         >
           Your Offerings 🪐
+        </div>
+        <div class="py-3  flex justify-start items-start self-start">
+          <div class="text-xl">Buyer Zone</div>
         </div>
         <div
           on:click={() => {
             push("/previous-orders");
             isopen = false;
           }}
-          class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center  text-xl text-fuchsia-500"
+          class="p-5 rounded-2xl bg-blue-200 w-full text-center  text-xl font-bold text-blue-500"
         >
           Your Orders 📦
         </div>
@@ -64,7 +70,7 @@
             push("/profile/" + localStorage.getItem("pid"));
             isopen = false;
           }}
-          class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center  text-xl text-fuchsia-500"
+          class="p-5 rounded-2xl bg-blue-200 w-full text-center  text-xl font-bold text-blue-500"
         >
           Profile 😁
         </div>

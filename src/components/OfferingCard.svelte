@@ -29,9 +29,11 @@
   {/if}
 
   <img class="w-full rounded-4xl h-72 object-cover" src={imgURL} alt="" />
-  <div class="px-5  w-full absolute bottom-5 left-0">
+  <div class={` w-full ${isAdmin ? "" : "absolute bottom-5 left-0 px-5"} `}>
     <div
-      class="rounded-4xl flex items-center gap-5 w-full bg-white shadow-sm p-2"
+      class={`rounded-4xl flex items-center gap-5 w-full ${
+        isAdmin ? "" : "bg-white shadow-sm p-2"
+      }  `}
     >
       {#if !isAdmin}
         <div class="h-24 w-20">

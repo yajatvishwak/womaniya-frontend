@@ -6,10 +6,11 @@ import Profile from "./pages/Profile.svelte";
 import PreviousOrders from "./pages/PreviousOrders.svelte";
 import AwaitingOrders from "./pages/AwaitingOrders.svelte";
 import Listings from "./pages/Listings.svelte";
+import Login from "./pages/Login.svelte";
 
 const routes = {
   // Exact path
-  "/": Preview,
+  "/": Login,
   "/home": Home,
   "/offering/:id": Offering,
   "/add-offering": AddOffering,
