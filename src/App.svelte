@@ -1,5 +1,7 @@
 <script>
   import routes from "./router";
+  import Toastify from "toastify-js";
+  import "toastify-js/src/toastify.css";
   import Router from "svelte-spa-router";
 </script>
 
@@ -11,9 +13,9 @@
   @tailwind base;
   @tailwind components;
   @tailwind utilities;
-  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
   body {
     @apply bg-background h-full min-h-screen  overflow-auto text-black;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Space Grotesk", sans-serif;
   }
 </style>

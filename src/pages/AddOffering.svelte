@@ -1,13 +1,18 @@
 <script>
   import TextInput from "../components/TextInput.svelte";
+  import TextArea from "../components/TextArea.svelte";
   import Button from "../components/Button.svelte";
   import Upload from "../components/Upload.svelte";
   import NavBar from "../components/NavBar.svelte";
+  import Toastify from "toastify-js";
+  import { nanoid } from "nanoid";
+
+  let userid = localStorage.getItem("userID");
   let name = "";
   let desc = "";
   let price = "";
   let unit = "";
-  let dp = null;
+  let dp = "";
 </script>
 
 <div class="overflow-auto p-8">
@@ -23,7 +28,7 @@
     </div>
     <div>
       <label for=""> Offering Description</label>
-      <TextInput bind:text={desc} />
+      <TextArea placeholder="Description of the offering" bind:text={desc} />
     </div>
     <div>
       <label for=""> Offering Price</label>
@@ -33,14 +38,37 @@
       </div>
     </div>
     <div>
-      <Upload bind:file={dp} />
+      <Upload bind:fileURL={dp} />
     </div>
     <div>
       <Button
         text="Submit"
-        cb={() => {
-          console.log(name, desc, price, unit, dp);
-          let payload = { name, desc, price: price + " " + unit, dp };
+        cb={async () => {
+          let payload = {
+            userid: userid,
+            listing: {
+              id: nanoid(),
+              oname: name,
+              odesc: desc,
+              oprice: price + " " + unit,
+              opic: dp,
+            },
+          };
+          console.log(payload);
+
+          fetch("http://8de0-49-207-194-233.ngrok.io/add-listing", {
+            method: "POST",
+            body: JSON.stringify(payload),
+          })
+            .then((payload) => {
+              return payload.json();
+            })
+            .then((response) => {
+              if (response.message === "success")
+                Toastify({
+                  text: "Offering Added 🥳",
+                }).showToast();
+            });
         }}
       />
     </div>
