@@ -2,6 +2,7 @@
   import { push } from "svelte-spa-router";
   import { fade } from "svelte/transition";
   let isopen = false;
+  let superseller = false;
 </script>
 
 {#if isopen}
@@ -28,13 +29,22 @@
         </div>
         <div
           on:click={() => {
+            push("/listings");
+            isopen = false;
+          }}
+          class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center font-bold  text-xl text-fuchsia-500"
+        >
+          Your Offerings 🪐
+        </div>
+        <!-- <div
+          on:click={() => {
             push("/add-offering");
             isopen = false;
           }}
           class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center font-bold text-xl text-fuchsia-500"
         >
-          Add your Offering 📝
-        </div>
+          Add new Offering 📝
+        </div> -->
         <div
           on:click={() => {
             push("/awaiting-orders");
@@ -44,15 +54,7 @@
         >
           Awaiting Orders💰
         </div>
-        <div
-          on:click={() => {
-            push("/listings");
-            isopen = false;
-          }}
-          class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center font-bold  text-xl text-fuchsia-500"
-        >
-          Your Offerings 🪐
-        </div>
+
         <div class="py-3  flex justify-start items-start self-start">
           <div class="text-xl">Buyer Zone</div>
         </div>
@@ -67,21 +69,41 @@
         </div>
         <div
           on:click={() => {
-            push("/profile/" + localStorage.getItem("pid"));
+            push("/profile/" + localStorage.getItem("userID"));
             isopen = false;
           }}
           class="p-5 rounded-2xl bg-blue-200 w-full text-center  text-xl font-bold text-blue-500"
         >
           Profile 😁
         </div>
+
+        <div class="py-3  flex justify-start items-start self-start">
+          <div class="text-xl">Super Seller Zone</div>
+        </div>
+        <div
+          on:click={() => {
+            push("/previous-orders");
+            isopen = false;
+          }}
+          class="p-5 rounded-2xl bg-blue-200 w-full text-center  text-xl font-bold text-blue-500 "
+        >
+          Super Charge your business 🚀
+        </div>
       </div>
     </div>
-    <div
-      on:click={() => (window.location.href = "https://about.pickforest.me")}
-      class="mt-  flex justify-between items-center"
-    >
-      <div class="text-3xl opacity-50 text-primary-blue font-bold">
-        Womanify
+    <div class="flex justify-between items-center">
+      <div
+        on:dblclick={() => {
+          console.log("db");
+          superseller = true;
+        }}
+        class="text-3xl opacity-50 text-primary-blue font-bold"
+      >
+        <span
+          on:click={() => {
+            superseller = true;
+          }}>Wo</span
+        >manify
       </div>
       <div class="opacity-50">
         <div>made with ❤️ and ☕</div>

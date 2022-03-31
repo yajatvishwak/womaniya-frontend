@@ -12,7 +12,7 @@ const routes = {
   // Exact path
   "/": Login,
   "/home": Home,
-  "/offering/:id": Offering,
+  "/offering/:userID/:id": Offering,
   "/add-offering": AddOffering,
   "/profile/:id": Profile,
   "/previous-orders": PreviousOrders,

@@ -56,7 +56,7 @@
           };
           console.log(payload);
 
-          fetch("http://8de0-49-207-194-233.ngrok.io/add-listing", {
+          fetch(BASEURL + "/add-listing", {
             method: "POST",
             body: JSON.stringify(payload),
           })
@@ -64,6 +64,7 @@
               return payload.json();
             })
             .then((response) => {
+              console.log(response);
               if (response.message === "success")
                 Toastify({
                   text: "Offering Added 🥳",

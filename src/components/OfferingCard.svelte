@@ -4,6 +4,7 @@
   export let avatarURL = "";
   export let title = "";
   export let sellerName = "";
+  export let sellerID = "";
   export let price = "";
   export let oid = "";
   export let isAdmin = false;
@@ -52,7 +53,10 @@
         {/if}
         <div class="font-bold text-primary-blue">{price}</div>
       </div>
-      <div class="ml-auto" on:click={() => push("/offering/" + oid)}>
+      <div
+        class="ml-auto"
+        on:click={() => push("/offering/" + sellerID + "/" + oid)}
+      >
         <svg
           class="w-6 h-6"
           fill="none"

@@ -1,10 +1,12 @@
 <script>
   import { fade } from "svelte/transition";
   export let price = "";
+  export let cb = () => {};
   let value = 0;
   let slidedone = false;
   $: {
     if (value === 99) {
+      cb();
       slidedone = true;
     }
   }
