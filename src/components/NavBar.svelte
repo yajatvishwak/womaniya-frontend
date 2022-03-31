@@ -82,7 +82,7 @@
         </div>
         <div
           on:click={() => {
-            push("/previous-orders");
+            push("/teams");
             isopen = false;
           }}
           class="p-5 rounded-2xl bg-blue-200 w-full text-center  text-xl font-bold text-blue-500 "

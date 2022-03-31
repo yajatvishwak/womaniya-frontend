@@ -7,12 +7,14 @@ import PreviousOrders from "./pages/PreviousOrders.svelte";
 import AwaitingOrders from "./pages/AwaitingOrders.svelte";
 import Listings from "./pages/Listings.svelte";
 import Login from "./pages/Login.svelte";
+import Teams from "./pages/Teams.svelte";
 
 const routes = {
   // Exact path
   "/": Login,
   "/home": Home,
   "/offering/:userID/:id": Offering,
+  "/teams": Teams,
   "/add-offering": AddOffering,
   "/profile/:id": Profile,
   "/previous-orders": PreviousOrders,
