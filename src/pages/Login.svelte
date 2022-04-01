@@ -1,7 +1,6 @@
 <script>
   import { push } from "svelte-spa-router";
-  let loading1 = false;
-  let loading2 = false;
+  let loading = false;
 </script>
 
 <div class="overflow-auto p-8 flex  flex-col justify-between h-screen">
@@ -17,49 +16,24 @@
   <div>
     <img src="assets/bg.png" alt="" />
   </div>
-  <div class="gap-3 flex flex-col">
-    <div
-      on:click={() => {
-        loading1 = true;
-        localStorage.setItem("userID", "6239e176d27797c9810aed11");
-        setTimeout(() => {
-          push("/home");
-        }, 3000);
-      }}
-      class="btn  w-full bg-white border-0 mt-auto text-primary-blue hover:bg-white"
-    >
-      {#if loading1}
-        <div class="spinner">
-          <div class="rect1" />
-          <div class="rect2" />
-          <div class="rect3" />
-          <div class="rect4" />
-        </div>
-      {:else}
-        <div>Login with Google</div>
-      {/if}
-    </div>
-    <div
-      on:click={() => {
-        loading2 = true;
-        localStorage.setItem("userID", "6239e282d27797c9810aed12");
-        setTimeout(() => {
-          push("/home");
-        }, 3000);
-      }}
-      class="btn  w-full bg-primary-blue mt-auto"
-    >
-      {#if loading2}
-        <div class="spinner ">
-          <div class="rect1" />
-          <div class="rect2" />
-          <div class="rect3" />
-          <div class="rect4" />
-        </div>
-      {:else}
-        <div>Login with Facebook</div>
-      {/if}
-    </div>
+  <div class="gap-3 flex  flex-col">
+    <div class="text-xl mt-3 font-bold ">Login to unlock your business</div>
+
+    <form class="w-full gap-3 flex flex-col">
+      <input
+        type="text"
+        class=" rounded-xl p-3 bg-white w-full"
+        placeholder="Email"
+      />
+      <input
+        type="password"
+        class=" bg-white w-full p-3 rounded-xl"
+        placeholder="Password"
+      />
+      <div>New here? Sign up</div>
+
+      <button class="btn mt-5 bg-primary-blue"> Submit</button>
+    </form>
   </div>
 </div>
 
