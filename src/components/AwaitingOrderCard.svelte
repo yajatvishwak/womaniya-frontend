@@ -38,7 +38,7 @@
       <Button
         text="Completed ✅"
         cb={async () => {
-          fetch(BASEURL + "/orderstat", {
+          fetch(BASEURL2 + "/orderstat", {
             method: "POST",
             body: JSON.stringify({ orderid, status: "Completed" }),
           })
@@ -47,7 +47,7 @@
               console.log(res);
               if (res.message === "success") {
                 Toastify({
-                  text: "Offering Added 🥳",
+                  text: "Order Completed 🥳",
                 }).showToast();
               }
             });
@@ -56,7 +56,7 @@
       <Button
         text="Cancelled ❌"
         cb={async () => {
-          fetch(BASEURL + "/orderstat", {
+          fetch(BASEURL2 + "/orderstat", {
             method: "POST",
             body: JSON.stringify({ orderid, status: "Cancelled" }),
           })
@@ -65,7 +65,7 @@
               console.log(res);
               if (res.message === "success") {
                 Toastify({
-                  text: "Offering Added 🥳",
+                  text: "Order Cancelled",
                 }).showToast();
               }
             });

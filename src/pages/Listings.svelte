@@ -4,6 +4,15 @@
   import { onMount } from "svelte";
   import { push } from "svelte-spa-router";
   let loading = true;
+  let data = [
+    // {
+    //   imgURL:
+    //     "https://www.tiffinboxfood.com/wp-content/uploads/2020/03/chicken-momo-1.jpg",
+    //   title: "Hot momos",
+    //   price: "1000 rs/plate",
+    //   oid: 12,
+    // },
+  ];
   onMount(() => {
     fetch(BASEURL + "/get-listings", {
       method: "POST",
@@ -12,20 +21,11 @@
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
-        data = res[0].listings;
+        if (res[0].listings) data = res[0].listings;
         console.log(data);
         loading = false;
       });
   });
-  let data = [
-    {
-      imgURL:
-        "https://www.tiffinboxfood.com/wp-content/uploads/2020/03/chicken-momo-1.jpg",
-      title: "Hot momos",
-      price: "1000 rs/plate",
-      oid: 12,
-    },
-  ];
 </script>
 
 <div class="overflow-auto p-8">

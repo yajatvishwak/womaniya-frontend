@@ -41,7 +41,8 @@ export default {
 	},
 	plugins: [
 		replace({
-			BASEURL : JSON.stringify("https://rotten-mule-68.loca.lt"),
+			BASEURL : JSON.stringify("https://warm-snail-99.loca.lt"),
+			BASEURL2 : JSON.stringify("https://tidy-bear-40.loca.lt"),
 		  }),
 		json(),
 		svelte({

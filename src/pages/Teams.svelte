@@ -9,34 +9,61 @@
   import Toastify from "toastify-js";
   import { nanoid } from "nanoid";
   import Line from "svelte-chartjs/src/Line.svelte";
-  let predict = true;
+  let predict = false;
+  let skill = "";
   let predictloading = false;
   let dataLine = {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    labels: ["Nov 2021", "Dec 2021", "Jan 2022", "Feb 2022", "Mar 2022"],
     datasets: [
       {
         fill: true,
         label: "Sales",
-        backgroundColor: "rgba(225, 204,230, .3)",
+        backgroundColor: "rgba(225, 204,230, .7)",
         pointRadius: 1,
         pointHitRadius: 10,
-        borderJoinStyle: "miter",
+        borderJoinStyle: "round",
         pointBorderColor: "rgb(205, 130,1 58)",
-        pointBackgroundColor: "rgb(255, 255, 255)",
-        data: [65, 59, 80, 81, 56, 55, 40],
+        pointBackgroundColor: "transparent",
+        data: [80, 73, 62, 71, 64],
+      },
+      {
+        fill: true,
+        label: "Sales(Pred)",
+        backgroundColor: "rgba(225, 255,255)",
+        pointRadius: 1,
+        pointHitRadius: 10,
+        borderJoinStyle: "round",
+        pointBorderColor: "rgb(205, 130,1 58)",
+        pointBackgroundColor: "transparent",
+        borderDash: [10, 10],
+        data: [, , , , 64],
       },
     ],
   };
 
   let data = [
     {
-      sellerID: "bro",
-      name: "bro",
+      _id: {
+        $oid: "",
+      },
+      id: "bro",
+      username: "bro",
       skill: "bro",
       avatarURL:
         "https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg",
     },
   ];
+  function onChangeSkill() {
+    fetch(BASEURL2 + "/teams", {
+      method: "POST",
+      body: JSON.stringify({ skill }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        data = res;
+      });
+  }
 </script>
 
 <div class="overflow-auto p-8">
@@ -50,7 +77,7 @@
 
   <div class="mt-6 flex flex-col gap-3">
     <div>Your Sales data</div>
-    <div class="bg-white rounded-3xl p-8">
+    <div class="bg-white rounded-3xl p-2">
       <Line data={dataLine} />
     </div>
   </div>
@@ -78,7 +105,7 @@
             />
           </svg>
         </div>
-        <div class="text-4xl text-center mt-7 font-bold">60</div>
+        <div class="text-4xl text-center mt-7 font-bold">64</div>
       </div>
       <div class="p-5 pb-10 w-full bg-white rounded-2xl">
         <div class="flex items-center justify-between">
@@ -97,7 +124,7 @@
             />
           </svg>
         </div>
-        <div class="text-4xl text-center mt-7 font-bold">60</div>
+        <div class="text-4xl text-center mt-7 font-bold">77</div>
       </div>
     </div>
     <div class="my-10">
@@ -109,22 +136,24 @@
         <select
           class="bg-transparent border-2  border-primary-blue-100 rounded-xl ml-auto p-2"
           name=""
+          bind:value={skill}
+          on:change={onChangeSkill}
           id=""
         >
-          <option value="">DIY</option>
-          <option value="">Cooking and Food</option>
-          <option value="">Beauty and Fashion</option>
-          <option value="">Teaching and Education</option>
-          <option value="">Others</option>
+          <option value="DIY">DIY</option>
+          <option value="Cooking">Cooking and Food</option>
+          <option value="Fashion">Beauty and Fashion</option>
+          <option value="Teaching">Teaching and Education</option>
+          <option value="Other">Others</option>
         </select>
       </div>
       <div class="grid grid-cols-2 gap-4 mt-8">
         {#each data as bro}
           <ConnectCard
             avatarURL={bro.avatarURL}
-            name={bro.name}
+            name={bro.username}
             skill={bro.skill}
-            sellerID={bro.sellerID}
+            sellerID={bro._id.$oid}
           />
         {/each}
       </div>
@@ -135,8 +164,8 @@
         predictloading = true;
         setTimeout(() => {
           predict = true;
-          dataLine.datasets[0].data.push(77);
-          dataLine.labels.push("August(predicted)");
+          dataLine.datasets[1].data.push(77);
+          dataLine.labels.push("April 2022(predicted)");
           dataLine = { ...dataLine };
         }, 4000);
       }}

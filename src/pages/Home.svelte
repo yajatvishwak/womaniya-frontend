@@ -18,17 +18,20 @@
         console.log(res);
         data.username = res.username;
         let listings = res.recentOfferings.map((item) => {
-          return item.listings.map((i) => {
-            return {
-              ...i,
-              sellerName: item.username,
-              avatarURL: item.avatarURL,
-              sellerID: item._id.$oid,
-            };
-          });
+          if (item.listings)
+            return item.listings.map((i) => {
+              return {
+                ...i,
+                sellerName: item.username,
+                avatarURL: item.avatarURL,
+                sellerID: item._id.$oid,
+              };
+            });
         });
+        console.log(listings.flat());
         listings = listings.flat().filter((item) => {
-          if (item.sellerID !== localStorage.getItem("userID")) return item;
+          if (item && item.sellerID !== localStorage.getItem("userID"))
+            return item;
         });
         console.log(listings.flat());
 

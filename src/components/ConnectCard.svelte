@@ -8,8 +8,8 @@
 </script>
 
 <div class="flex  flex-col bg-white p-5 rounded-xl">
-  <div class="">
-    <img src={avatarURL} class=" rounded-full" alt="" />
+  <div class="max-h-52">
+    <img src={avatarURL} class=" h-full rounded-full" alt="" />
   </div>
   <div class="my-5">
     <div class="font-bold text-2xl">{name}</div>

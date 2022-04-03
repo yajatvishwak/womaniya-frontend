@@ -24,7 +24,7 @@
   <div class="mt-6 flex flex-col gap-3">
     <div>
       <label for=""> Offering name</label>
-      <TextInput bind:text={name} />
+      <TextInput placeholder="what are you selling" bind:text={name} />
     </div>
     <div>
       <label for=""> Offering Description</label>
@@ -33,8 +33,8 @@
     <div>
       <label for=""> Offering Price</label>
       <div class="flex gap-3">
-        <TextInput bind:text={price} />
-        <TextInput bind:text={unit} />
+        <TextInput placeholder="100" bind:text={price} />
+        <TextInput placeholder="per hour" bind:text={unit} />
       </div>
     </div>
     <div>
@@ -65,7 +65,7 @@
             })
             .then((response) => {
               console.log(response);
-              if (response.message === "success")
+              if (response.ok === 1)
                 Toastify({
                   text: "Offering Added 🥳",
                 }).showToast();

@@ -18,7 +18,7 @@
         <div class="flex items-center justify-between  ">
           <div class="text-xl font-bold ">{title}</div>
           <div class="font-bold text-xs opacity-50">
-            Order Completed {status}
+            Order {status}
           </div>
         </div>
         <div

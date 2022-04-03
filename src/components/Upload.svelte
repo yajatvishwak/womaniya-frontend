@@ -31,12 +31,12 @@
         /></svg
       >
     </div>
-    <div>Upload Offering Picture</div>
+    <div>Upload Picture</div>
   </div>
 
   {#if fileURL}
-    <div class="max-h-96 mt-5 w-full">
-      <img src={fileURL} class="w-full object-cover" alt="" srcset="" />
+    <div class="h-96 mt-5 w-full">
+      <img src={fileURL} class="w-full h-full object-cover" alt="" srcset="" />
     </div>
   {/if}
 </div>

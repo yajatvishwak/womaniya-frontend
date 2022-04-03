@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@rollup/plugin-json": "^4.1.0",
+    "axios": "^0.26.1",
     "chart.js": "^3.7.1",
     "cloudinary-core": "^2.12.3",
     "daisyui": "^2.8.0",
