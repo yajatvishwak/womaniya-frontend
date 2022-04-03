@@ -127,12 +127,9 @@
           <Button red={true} text="Logout" />
         </div>
       {/if}
-      <div
-        on:click={() => (window.location.href = "https://about.pickforest.me")}
-        class="mt-10 flex justify-between items-center"
-      >
+      <div class="mt-10 flex justify-between items-center">
         <div class="text-3xl opacity-50 text-primary-blue font-bold">
-          Womanify
+          Womaniya
         </div>
         <div class="opacity-50">
           <div>made with ❤️ and ☕</div>
