@@ -19,20 +19,20 @@
             push("/home");
             isopen = false;
           }}
-          class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center font-bold text-xl text-fuchsia-500"
+          class="p-3 rounded-2xl bg-fuchsia-200 w-full text-center font-bold  text-fuchsia-500"
         >
           Home 🏡
         </div>
 
         <div class="py-3  flex justify-start items-start self-start">
-          <div class="text-xl">Seller Zone</div>
+          <div class="">Seller Zone</div>
         </div>
         <div
           on:click={() => {
             push("/listings");
             isopen = false;
           }}
-          class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center font-bold  text-xl text-fuchsia-500"
+          class="p-3 rounded-2xl bg-fuchsia-200 w-full text-center font-bold   text-fuchsia-500"
         >
           Your Offerings 🪐
         </div>
@@ -41,7 +41,7 @@
             push("/add-offering");
             isopen = false;
           }}
-          class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center font-bold text-xl text-fuchsia-500"
+          class="p-3 rounded-2xl bg-fuchsia-200 w-full text-center font-bold  text-fuchsia-500"
         >
           Add new Offering 📝
         </div> -->
@@ -50,20 +50,20 @@
             push("/awaiting-orders");
             isopen = false;
           }}
-          class="p-5 rounded-2xl bg-fuchsia-200 w-full text-center font-bold  text-xl text-fuchsia-500"
+          class="p-3 rounded-2xl bg-fuchsia-200 w-full text-center font-bold   text-fuchsia-500"
         >
           Awaiting Orders💰
         </div>
 
         <div class="py-3  flex justify-start items-start self-start">
-          <div class="text-xl">Buyer Zone</div>
+          <div class="">Buyer Zone</div>
         </div>
         <div
           on:click={() => {
             push("/previous-orders");
             isopen = false;
           }}
-          class="p-5 rounded-2xl bg-blue-200 w-full text-center  text-xl font-bold text-blue-500"
+          class="p-3 rounded-2xl bg-blue-200 w-full text-center   font-bold text-blue-500"
         >
           Your Orders 📦
         </div>
@@ -72,20 +72,20 @@
             push("/profile/" + localStorage.getItem("userID"));
             isopen = false;
           }}
-          class="p-5 rounded-2xl bg-blue-200 w-full text-center  text-xl font-bold text-blue-500"
+          class="p-3 rounded-2xl bg-blue-200 w-full text-center   font-bold text-blue-500"
         >
           Profile 😁
         </div>
 
         <div class="py-3  flex justify-start items-start self-start">
-          <div class="text-xl">Super Seller Zone</div>
+          <div class="">Super Seller Zone</div>
         </div>
         <div
           on:click={() => {
             push("/teams");
             isopen = false;
           }}
-          class="p-5 rounded-2xl bg-blue-200 w-full text-center  text-xl font-bold text-blue-500 "
+          class="p-3 rounded-2xl bg-blue-200 w-full text-center   font-bold text-blue-500 "
         >
           Super Charge your business 🚀
         </div>
@@ -99,11 +99,7 @@
         }}
         class="text-3xl opacity-50 text-primary-blue font-bold"
       >
-        <span
-          on:click={() => {
-            superseller = true;
-          }}>Wo</span
-        >manify
+        Womaniya
       </div>
       <div class="opacity-50">
         <div>made with ❤️ and ☕</div>
