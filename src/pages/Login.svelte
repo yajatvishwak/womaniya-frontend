@@ -13,7 +13,7 @@
   <div>
     <div class="text-primary-blue text-3xl w-1/2  font-bold mt-10 ">
       <div class="text-black">Welcome to</div>
-      <div class="text-5xl mt-1">Womanify</div>
+      <div class="text-5xl mt-1">Womaniya</div>
     </div>
     <div class="text-primary-blue mt-2 font-bold opacity-30 ">
       Woman can do business too
